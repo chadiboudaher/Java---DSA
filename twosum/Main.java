@@ -8,8 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] result = twoSum(new int[]{1, 2, 3, 4, 5, 6, 7}, 9);
-        System.out.println(Arrays.toString(result));
+        // int[] result = twoSum(new int[]{1, 2, 3, 4, 5, 6, 7}, 9);
+        // System.out.println(Arrays.toString(result));
+        int[] nums = {1, 5, 7, -1, 5};
+        int target = 6;
+        System.out.println("Count of pairs: " + countPairs(nums, target));  // Output: 3
     }
 
     public static int[] twoSum(int[] nums, int target) {
@@ -31,5 +34,21 @@ public class Main {
         }
 
         return new int[] {};
+    }
+
+    public static int countPairs(int[] nums, int target) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        int count = 0;
+
+        for (int num : nums) {
+            int complement = target - num;
+
+            if (freq.containsKey(complement)) {
+                count += freq.get(complement);
+            }
+
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        return count;
     }
 }
