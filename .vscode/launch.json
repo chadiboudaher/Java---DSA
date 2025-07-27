@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Anagram Main",
+      "request": "launch",
+      "mainClass": "anagram_java.Main",
+      "projectName": "Java - DSA_99e31db2"
+    }
+  ]
+}
